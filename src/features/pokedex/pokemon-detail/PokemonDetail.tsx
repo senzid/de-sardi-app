@@ -9,7 +9,6 @@ interface Props<TElement> {
 export const PokemonDetail =<TElement extends unknown>({
     pokemonData
   }: Props<TElement>) => {
-    console.log(pokemonData)
     const height=pokemonData?.height
     const weight=pokemonData?.weight
     const frontImg=pokemonData?.sprites.front_default

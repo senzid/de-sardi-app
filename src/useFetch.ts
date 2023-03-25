@@ -13,7 +13,7 @@ export const useFetch = () => {
     
     const [pokemonData,setPokemonData] = useState<pokemonResponse[]>()
     const [loading,setLoading] = useState(true);
-    const [error,setError] = useState(true);
+    const [error,setError] = useState(false);
     const [numberResults,setNumberResults] = useState(10);
     const [currentPage,setCurrentPage] = useState(0);
     

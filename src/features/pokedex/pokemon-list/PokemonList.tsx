@@ -45,13 +45,17 @@ export function PokemonList() {
 
     return (
       <>
+        {error ? 
+          <div className='error'> There ara an error. Try again later. </div>
+          :
         <PokeTable 
-          loading={loading}
-          columnRender={columns}
-          dataSource={pokemonData}
-          keyExtractor={(item)=>item.id}
-          pagination={custPagination}
+        loading={loading}
+        columnRender={columns}
+        dataSource={pokemonData}
+        keyExtractor={(item)=>item.id}
+        pagination={custPagination}
         />
+      }
         <PokeModal isOpen={isOpen} toggle={toggle}>
           <PokemonDetail pokemonData={idContent}/>
         </PokeModal>

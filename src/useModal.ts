@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { pokemonResponse } from "./types";
 
 export default function useModal() {
@@ -12,7 +12,6 @@ export default function useModal() {
   const handleContent = (id:pokemonResponse) => {
     setIdContent(id)
   }
-  // console.log(idContent)
   return {
     isOpen,
     toggle,
