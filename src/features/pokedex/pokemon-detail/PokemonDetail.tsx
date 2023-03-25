@@ -1,8 +1,6 @@
-import React from 'react';
 import { pokemonResponse } from '../../../types';
 import './PokemonDetail.scss';
-import { Table } from '@senzid/de-sardi-lib';
-import { CustomTable } from '../../ui-components/CustomTable';
+import { PokeTable } from '../../ui-components/PokeTable';
 
 interface Props<TElement> {
     pokemonData?: pokemonResponse | undefined;
@@ -18,7 +16,6 @@ export const PokemonDetail =<TElement extends unknown>({
     const backImg=pokemonData?.sprites.back_default
     const types = pokemonData?.types.map((type)=><p key={pokemonData.name+type.type.name} className={`${type.type.name}`}>{type.type.name}</p>)
     const abilities = pokemonData?.abilities.map((ability)=><span key={pokemonData.name+ability.ability.name}>&nbsp;{ability.ability.name} |</span>)
-    // console.log(types) <p>{ability}</p>
 
     const columnsMoves=[{
       title:'name',
@@ -56,13 +53,13 @@ export const PokemonDetail =<TElement extends unknown>({
         <p><span>Abilities:</span> {abilities}</p>
         <p><span>Stats:</span></p>
         <div className='stats-table'>
-          <Table loading={false} columnRender={columsStats} dataSource={pokemonData?.stats} keyExtractor={(item)=>item.stat.name} />
+          <PokeTable loading={false} columnRender={columsStats} dataSource={pokemonData?.stats} keyExtractor={(item)=>item.stat.name} />
         </div>
       </div>
       <div className='movements'>
         <p><span>Moves:</span></p>
         <div className='movements-table'>
-          <Table loading={false} columnRender={columnsMoves} dataSource={pokemonData?.moves} keyExtractor={(item)=>item.move.name} />
+          <PokeTable loading={false} columnRender={columnsMoves} dataSource={pokemonData?.moves} keyExtractor={(item)=>item.move.name} />
         </div>
       </div>
     </div>
