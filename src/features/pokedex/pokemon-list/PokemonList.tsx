@@ -56,7 +56,7 @@ export function PokemonList() {
         pagination={custPagination}
         />
       }
-        <p> continuous integration works</p>
+        <p> continuous integration test 2</p>
         <PokeModal isOpen={isOpen} toggle={toggle}>
           <PokemonDetail pokemonData={idContent}/>
         </PokeModal>
