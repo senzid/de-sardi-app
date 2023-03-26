@@ -15,12 +15,22 @@ permissions:
   pages: write
   id-token: write
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: set Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Install and Build
         run: npm install && npm run build
