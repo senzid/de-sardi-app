@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { pokemonResponse } from "./types";
+import { pokemonResponse } from "../../../types";
 
 export default function useModal() {
   const [isOpen, setisOpen] = useState(false);

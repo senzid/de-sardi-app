@@ -1,5 +1,7 @@
 import { useState,useEffect } from "react"
-import { pokemonResponse } from "./types"
+import {getApiDataByUrl,getApiDataByEndpoint} from "../../../services/api"
+import { pokemonResponse } from "../../../types"
+import apiPaths from "../../../services/apiPaths"
 
 
 interface apiResponse {
@@ -9,7 +11,7 @@ interface apiResponse {
     results: Array<any>
 }
 
-export const useFetch = () => {
+export const usePokemonList = () => {
     
     const [pokemonData,setPokemonData] = useState<pokemonResponse[]>()
     const [loading,setLoading] = useState(true);
@@ -17,11 +19,9 @@ export const useFetch = () => {
     const [numberResults,setNumberResults] = useState(10);
     const [currentPage,setCurrentPage] = useState(0);
     
-
     useEffect(()=> {
-        setLoading(true);
-        fetch(`https://pokeapi.co/api/v2/pokemon?limit=${numberResults}&offset=${currentPage}`) //limit=nombre resultats i offset pokemon que comenca
-        .then(response=>response.json())
+        const endpoind = apiPaths.ALLPOKEMON
+        getApiDataByEndpoint(`${endpoind}?limit=${numberResults}&offset=${currentPage}`)
         .then(data=>pokemonDetails(data))
         .catch((err)=>setError(err))
         .finally(()=>setLoading(false))
@@ -30,7 +30,7 @@ export const useFetch = () => {
     async function pokemonDetails (data:apiResponse) {
         const pokemonInfo = await Promise.all(
             data.results.map(async(pokemon:{name:string, url:string})=>{
-                return await fetch(pokemon.url).then(response=>response.json())
+                return await getApiDataByUrl(pokemon.url)
             })
         )
         setPokemonData(pokemonInfo)

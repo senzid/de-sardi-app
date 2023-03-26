@@ -1,7 +1,16 @@
+@import 'src/utils/styles/settings';
+
 .container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 140px 1fr;
+  display: flex;
+  .left-container {
+    flex-grow: 2;
+  }
+}
+
+.sub-container{
+display: flex;
+flex-direction: column;
+
 }
 
 .types-container {
@@ -31,19 +40,15 @@
 
 
 .movements {    
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
     span {
       font-weight: bold;
     }
     .movements-table {
-      height: 291px;
-      width: 80%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-left: -75px;
-    margin-top: 10px;
+      height: 268px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-left: -75px;
+      margin-top: 10px;
     table td,th {
       height: 1.5em;
     }
@@ -87,90 +92,90 @@
 
   .grass {
     border: 1px solid green;
-    background-color: rgba(0, 128, 0, 0.75);
+    background-color: $grass;
   }
 
   .poison {
     border: 1px solid purple;
-    background-color: rgba(128, 0, 128, 0.75);
+    background-color: $poison;
   }
 
   .fire {
     border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.75);
+    background-color: $fire
   }
 
   .flying {
     border: 1px solid cyan;
-    background-color: rgba(0, 255, 255, 0.75);
+    background-color: $flying;
   }
 
   .water {
     border: 1px solid blue;
-    background-color: rgba(0, 0, 255, 0.75);
+    background-color: $water;
   }
 
   .bug {
-    border: 1px solid greenyellow;
-    background-color: rgba(172, 255, 47, 0.75);
+    border: 1px solid olivedrab;
+    background-color: $bug;
   }
 
   .normal {
     border: 1px solid lightgray;
-    background-color: rgba(230, 230, 230, 0.85);
+    background-color: $normal;
   }
 
   .rock {
     border: 1px solid dimgray;
-    background-color: gray;
+    background-color: $rock;
   }
 
   .ground {
     border: 1px solid brown;
-    background-color: rgba(165, 42, 42, 0.75);
+    background-color: $ground;
   }
 
   .fighting {
     border: 1px solid gray;
-    background-color: rgba(178, 34, 34, 0.75);
+    background-color: $fighting;
   }
 
   .psychic {
     border: 1px solid purple;
-    background-color: rgba(139, 0, 139, 0.75);
+    background-color: $psychic;
   }
 
   .ghost {
     border: 1px solid black;
-    background-color: rgba(128, 0, 128, 0.75);
+    background-color: $ghost;
   }
 
   .ice {
     border: 1px solid lavender;
-    background-color: lightblue;
+    background-color: $ice;
   }
 
   .electric {
     border: 1px solid yellow;
-    background-color: rgba(255, 166, 0, 0.65);
+    background-color: $electric;
   }
 
   .dragon {
     border: 1px solid indigo;
-    background-color: rgba(218, 165, 32, 0.75);
+    background-color: $dragon;
   }
 
   .dark {
     border: 1px solid black;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: $dark;
   }
 
   .steel {
     border: 1px solid gray;
-    background-color: silver;
+    background-color: $steel;
   }
 
   .fairy {
     border: 1px solid rosybrown;
-    background-color: pink;
+    background-color: $fairy;
   }
