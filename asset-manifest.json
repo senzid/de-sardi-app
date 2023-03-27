@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/de-sardi-app/static/css/main.22b9a23a.css",
-    "main.js": "/de-sardi-app/static/js/main.938a3a08.js",
+    "main.js": "/de-sardi-app/static/js/main.b5120122.js",
     "index.html": "/de-sardi-app/index.html"
   },
   "entrypoints": [
     "static/css/main.22b9a23a.css",
-    "static/js/main.938a3a08.js"
+    "static/js/main.b5120122.js"
   ]
 }
