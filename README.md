@@ -4,7 +4,7 @@ This project is hosted in a public github repository and you can clone it. But i
 
 The projects will be totally opened during few days. If you are trying to install it and credentials failed message appears contact to @senzid to obtain a valid token.
 
-You can see the project in this github page [https://senzid.github.io/de-sardi-app/]
+You can see the project in this github page: [https://senzid.github.io/de-sardi-app/]
 
 ## Project Structure
 
