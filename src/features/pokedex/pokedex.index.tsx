@@ -1,4 +1,4 @@
-import { PokemonList } from './pokemon-list/PokemonList';
+import { PokemonList } from './pokemonList/PokemonList';
 
 export function Pokedex() {
 

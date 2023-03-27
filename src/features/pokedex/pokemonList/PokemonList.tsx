@@ -3,7 +3,8 @@ import {PokeTable} from '../../ui-components/table/PokeTable';
 import { PokeButton } from '../../ui-components/button/PokeButton';
 import {PokeModal} from '../../ui-components/modal/PokeModal'
 import useModal from '../../ui-components/modal/useModal';
-import { PokemonDetail } from '../pokemon-detail/PokemonDetail';
+import { PokemonDetail } from '../pokemonDetail/PokemonDetail';
+import { feedback } from '../../../utils/feedback';
 
 export function PokemonList() {
   
@@ -48,7 +49,7 @@ export function PokemonList() {
     return (
       <>
         {error ? 
-          <div className='error'> There ara an error. Try again later. </div>
+          feedback()
           :
         <PokeTable 
         loading={loading}
