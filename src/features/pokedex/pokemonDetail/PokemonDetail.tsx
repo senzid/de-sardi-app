@@ -18,22 +18,25 @@ export const PokemonDetail = ({
     const mainType = types && types[0].props.className
 
     const columnsMoves=[{
-      title:'name',
+      title:'attack',
       renderItem:(item:any)=>item.move.name
     },
     {
-      title:'level earned',
+      title:'level learned',
       renderItem:(item:any)=>item.version_group_details[0].level_learned_at
     }]
 
     const columsStats=[{
-      title:'name',
+      title:'stat',
       renderItem:(item:any)=>item.stat.name
     },
     {
-      title:'base stat',
+      title:'base value',
       renderItem:(item:any)=>item.base_stat
     }]
+
+    const altImgfront = () => frontImg?`back sprite of ${pokemonData?.name}`:`${pokemonData?.name} front not available`
+    const altImgBack = () => backImg?`back sprite of ${pokemonData?.name}`:`${pokemonData?.name} back not available`
 
   return (
     <div className='container'>
@@ -54,11 +57,10 @@ export const PokemonDetail = ({
         </div>
       </div>
 
-
       <div className='sub-container right-container'>
         <div style={{backgroundColor:'transparent',borderRadius:'10px'}} className={`image ${mainType}`}>
-          <img alt={`front sprite of ${pokemonData?.name}`} height="150px" src={frontImg}></img>
-          <img alt={`front sprite of ${pokemonData?.name}`} height="150px" src={backImg}></img>
+          <img alt={altImgfront()} height="150px" src={frontImg}></img>
+          <img alt={altImgBack()} height="150px" src={backImg}></img>
         </div>
         <div className='movements'>
           <p><span>Moves:</span></p>

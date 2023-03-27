@@ -35,7 +35,7 @@ export function PokemonList() {
   
     const resultsFilter = [5,10].map((val)=><PokeButton style={{marginRight:'5px'}} className="outlined" color="black" onClick={()=>setNumberResults(val)} key={`filter_${val}`}>{val}</PokeButton>)
 
-    const extremsFilter = [0,1000].map((val)=><PokeButton style={{marginRight:'5px',backgroundColor:"lightgray"}} className="outlined" color='black' onClick={()=>setCurrentPage(val)} key={`extrem_${val}`}>{val===0?'first':'last'}</PokeButton>)
+    const extremsFilter = [0,1010-numberResults].map((val)=><PokeButton style={{marginRight:'5px',backgroundColor:"lightgray"}} className="outlined" color='black' onClick={()=>setCurrentPage(val)} key={`extrem_${val}`}>{val===0?'first':'last'}</PokeButton>)
   
     const custPagination = {
       currentPage : Math.ceil(currentPage/numberResults+1),
